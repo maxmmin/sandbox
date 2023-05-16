@@ -39,8 +39,8 @@ class Kid {
 
         synchronized (Candy.class) {
             if (!candy.isUnpacked()) {
-                System.out.printf("Kid %s has eaten %s\n", getName(), candy.getName());
                 candy.unpack();
+                System.out.printf("Kid %s has eaten %s\n", getName(), candy.getName());
             } else {
                 System.out.printf("Kid %s had nothing to eat: somebody already had eaten %s\n", getName(), candy.getName());
             }
