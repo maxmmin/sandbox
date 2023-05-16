@@ -37,7 +37,7 @@ class Kid {
             throw new NullPointerException();
         }
 
-        synchronized (Kid.class) {
+        synchronized (Candy.class) {
             if (!candy.isUnpacked()) {
                 System.out.printf("Kid %s has eaten %s\n", getName(), candy.getName());
                 candy.unpack();
