@@ -26,8 +26,6 @@ class BlockingThread extends Thread {
     @Override
     public void run() {
         synchronized (this) {
-            if (blockingThread==null) throw new NullPointerException();
-
             try {
                 Thread.sleep(10);
             } catch (InterruptedException e) {
