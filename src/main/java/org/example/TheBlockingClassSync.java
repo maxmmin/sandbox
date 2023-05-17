@@ -20,9 +20,7 @@ class BlockingThread extends Thread {
         this.blockingThread = blockingThread;
     }
 
-    /**
-     * викликаємо метод з пониженним значенням таймера
-     */
+
     @Override
     public void run() {
         synchronized (this) {
