@@ -1,0 +1,30 @@
+    /**
+     * викликаємо join, тільки якщо інший поток ще не запущений 
+     */
+    @Override
+    public void run() {
+        try {
+            if (!blockingThread.isAlive()) {
+                blockingThread.join();
+            };
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(Thread.currentThread().getName()+" finished\n");
+    }
+    
+    
+    /**
+     * викликаємо метод з пониженним значенням таймера. Взаємне блокування відбувається, але через 100 мс потоки перестають чекати та йдуть далі.
+     */
+    @Override
+    public void run() {
+        try {
+            blockingThread.join(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(Thread.currentThread().getName()+" finished\n");
+    }
+    
+    
